@@ -6,7 +6,8 @@
 
     class Person {
         constructor(
-            public name: string,
+            public firstname: string,
+            public lastname: string,
             public gender: Gender,
             public birthdate: Date,
         ) {
@@ -18,11 +19,12 @@
             public email: string,
             public role: string,
             private lastAccess: Date,
-            name: string,
+            firstname: string,
+            lastname: string,
             gender: Gender,
             birthdate: Date,
         ) {
-            super(name, gender, birthdate);
+            super(firstname, lastname, gender, birthdate);
             this.lastAccess = new Date();
         }
 
@@ -38,7 +40,8 @@
             public lastFolderOpen: string,
             email: string,
             role: string,
-            name: string,
+            firstname: string,
+            lastname: string,
             gender: Gender,
             birthdate: Date,
         ) {
@@ -46,7 +49,8 @@
                 email,
                 role,
                 new Date(),
-                name,
+                firstname,
+                lastname,
                 gender,
                 birthdate
             )
@@ -60,6 +64,7 @@
         'fernando@google.com',
         'F',
         'Fernando',
+        'Herrera',
         'M',
         new Date('1985-10-21')
     );

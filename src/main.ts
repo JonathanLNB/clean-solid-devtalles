@@ -1,5 +1,5 @@
 import './style.css'
-import './clean-code/07-homework'
+import './code-smells/02-high-coupling.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center">
