@@ -1,4 +1,6 @@
 import './style.css'
+import './clean-code/04-homework'
+
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center">
   <h1>Clean SOLID</h1>
