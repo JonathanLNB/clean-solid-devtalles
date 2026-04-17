@@ -1,5 +1,5 @@
 import './style.css'
-import './clean-code/06-classes-c'
+import './clean-code/07-homework'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center">
