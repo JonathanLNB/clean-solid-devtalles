@@ -9,15 +9,20 @@
     }
 
     interface UserProps {
+        birthdate: Date;
+        gender: Gender;
+        name: string;
         email: string;
-        lastAccess?: Date;
-        personProps: PersonProps;
         role: string;
     }
 
     interface UserSettingsProps {
+        birthdate: Date;
+        gender: Gender;
+        name: string;
+        email: string;
+        role: string;
         lastOpenFolder: string;
-        userProps: UserProps;
         workingDirectory: string;
     }
 
@@ -30,7 +35,6 @@
             this.birthdate = birthdate;
             this.gender = gender;
             this.name = name;
-
         }
     }
 
@@ -39,10 +43,10 @@
         public lastAccess: Date;
         public role: string;
 
-        constructor({email, lastAccess, role, personProps}: UserProps) {
-            super(personProps);
+        constructor({email, role, name, gender, birthdate}: UserProps) {
+            super({name, gender, birthdate});
             this.email = email;
-            this.lastAccess = lastAccess ?? new Date();
+            this.lastAccess = new Date();
             this.role = role;
         }
 
@@ -55,8 +59,8 @@
         public workingDirectory: string;
         public lastOpenFolder: string;
 
-        constructor({lastOpenFolder, userProps, workingDirectory}: UserSettingsProps) {
-            super(userProps);
+        constructor({lastOpenFolder, workingDirectory, email, role, name, gender, birthdate}: UserSettingsProps) {
+            super({email, role, name, gender, birthdate});
             this.lastOpenFolder = lastOpenFolder;
             this.workingDirectory = workingDirectory;
         }
@@ -64,15 +68,11 @@
 
     const userSettings = new UserSettings({
             lastOpenFolder: '/home',
-            userProps: {
-                email: 'jonathanleonardonb@gmail.com',
-                personProps: {
-                    name: 'Jonathan',
-                    gender: 'M',
-                    birthdate: new Date('1997-05-30')
-                },
-                role: 'Admin',
-            },
+            email: 'jonathanleonardonb@gmail.com',
+            name: 'Jonathan',
+            gender: 'M',
+            birthdate: new Date('1997-05-30'),
+            role: 'Admin',
             workingDirectory: '/usr/home',
         }
     )
