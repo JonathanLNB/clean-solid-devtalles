@@ -1,5 +1,5 @@
 import './style.css'
-import './solid/02-open-close-a'
+import './solid/03-liskov-a'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section id="center">
